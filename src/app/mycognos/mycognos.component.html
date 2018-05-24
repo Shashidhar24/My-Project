@@ -1,0 +1,53 @@
+<div style="float:left">  
+  <label>Geo</label>
+  &nbsp;
+  <select name="Geo" [(ngModel)]="geo">
+    <option value="North America">North America</option>
+    <option value="Europe">Europe</option>
+    <option value="Japan">Japan</option>
+    <option value="Asia Pacific">Asia Pacific</option>
+    <option value="Greater China Group">Greater China Group</option>
+    <option value="Latin America">Latin America</option>
+    <option value="MEA">MEA</option>
+  </select>
+  
+  &nbsp;&nbsp;
+  
+  <label>Quarter</label>
+  &nbsp;
+  <select name="Quarter" [(ngModel)]="quarter">
+    <option value="CQ">CQ</option>
+    <option value="NQ">NQ</option>
+    <option value="NQ+1">NQ+1</option>
+    <option value="NQ+2">NQ+2</option>
+  </select>
+  &nbsp;
+  </div>
+  
+  &nbsp;&nbsp;
+  
+  <div style="float:left; border:1px solid; padding:5px 10px ;">
+    <input type="radio" name="vehicle" value="Show Qual Pipeline"  [(ngModel)]="vehicle">Show Qual Pipeline
+    <br>
+    <input type="radio" name="vehicle" value="Show Val Pipeline" [(ngModel)]="vehicle">Show Val Pipeline
+    <br>
+    <input type="radio" name="vehicle" value="Show Won Pipeline" [(ngModel)]="vehicle">Show Won Pipeline
+  </div>
+  
+  <button (click)="save()">Submit</button>
+  
+  <div style="clear:both"></div>
+  
+  <table  border="1" cellspacing=0 *ngIf="flag">
+      <tr>
+          <th>Geo</th>
+          <th>Quarter</th>
+          <th>Pipeline</th>
+        </tr>
+        <tr>
+            <td>{{geo}}</td>
+            <td>{{quarter}}</td>
+            <td>{{vehicle}}</td>
+          </tr>
+  
+  </table>
